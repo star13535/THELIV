@@ -10,7 +10,7 @@
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="수원 오목천역 더리브 - 장영희 팀장">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="SGC E&C가 오목천역에 선보이는 초역세권 프리미엄 명품 브랜드 단지!">
     <meta property="og:image" content="https://star13535.github.io/ELIF-THEHUE/img/YNG.jpg">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -436,7 +436,7 @@
 <body>
     <div class="business-card" id="pcCard">
         <div class="card-container">
-            <img src="img/YNG.jpg" alt="명함">
+            <img src="img/JYH.jpg" alt="명함">
 
             <a href="#" class="card-btn-call set-phone-link">
                 📞 <span class="set-name"></span> 팀장 상담 바로 연결
@@ -461,10 +461,10 @@
     </div>
     
     <div class="main-title">
-        <div class="inner-logo"><img src="img/logo.png" alt="더샵 로고"></div>
+        <div class="inner-logo"><img src="img/logo.png" alt="더리브 로고"></div>
         <div class="title-text">
-            <h2>엘리프 한신더휴 수원</h2>
-            <p>계룡건설과 한신공영이 함께 만드는 1,149세대 브랜드타운 명품 대단지!</p>
+            <h2>수원 오목천역 더리브</h2></h2>
+            <p>SGC E&C가 오목천역에 선보이는 초역세권 프리미엄 명품 브랜드 단지!</p>
         </div>
     </div>
     
@@ -476,13 +476,15 @@
     </div>
 
     <div class="tab-menu">
-        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업안내</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab2')">프리미엄</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab3')">단지&세대안내</button>
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업개요</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">단지&세대안내</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">개발계획</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">관내분석</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab5')">주목할점</button>
     </div>
 
     <div id="tab1" class="tab-content active">
-        <img src="img/2.jpg"><img src="img/3.jpg"><img src="img/6.jpg"><img src="img/7.jpg">
+        <img src="img/3.jpg"><img src="img/5.jpg">
         <div class="reservation-card mobile-res-only">
             <div class="res-container">
                 <h3>📞 전화 상담 예약하기</h3>
@@ -493,57 +495,38 @@
         </div>
     </div>
 
-    <div id="tab2" class="tab-content">
-        <img src="img/8.jpg"><img src="img/9.jpg"><img src="img/10.jpg"><img src="img/13.jpg"><img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg">
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
-            </div>
-        </div>
-    </div>
     
-    <div id="tab3" class="tab-content">
+    
+    <div id="tab2" class="tab-content">
         <div class="view-mode-selector">
             <button class="mode-btn active" onclick="changeViewMode(event, 'photo-view')">🏢 단지 안내</button>
             <button class="mode-btn" onclick="changeViewMode(event, 'plan-view')">🏠 평면도 안내</button>
         </div>
         <div id="photo-view" class="mode-content active">
             <div class="type-group active"><div class="sub-tab-menu">
-                <button class="sub-tab-btn active" onclick="openSubTab(event, 'danji1', 'photo-view')">조감도</button>
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji2', 'photo-view')">단지/동호수 배치도</button>
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji3', 'photo-view')">커뮤니티 센터</button>
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'danji1', 'photo-view')">단지 배치도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji2', 'photo-view')">동호 배치도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji3', 'photo-view')">특화 시스템</button>
             </div></div>
-            <div id="danji1" class="sub-tab-content active"><img src="img/21.jpg"></div>
-            <div id="danji2" class="sub-tab-content"><img src="img/32.jpg"><img src="img/33.jpg"><img src="img/34.jpg"><img src="img/35.jpg"></div>
-            <div id="danji3" class="sub-tab-content"><img src="img/36.jpg"><img src="img/37.jpg"><img src="img/38.jpg"><img src="img/39.jpg"><img src="img/40.jpg"><img src="img/41.jpg"></div>
+            <div id="danji1" class="sub-tab-content active"><img src="img/7.jpg"></div>
+            <div id="danji2" class="sub-tab-content"><img src="img/8.jpg"></div>
+            <div id="danji3" class="sub-tab-content"><img src="img/12.jpg"></div>
         </div>
         <div id="plan-view" class="mode-content">
             <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
             <div class="size-filter">
-                <button class="filter-btn active" onclick="filterSize(event, 'size74A')">74A</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size84A')">84A~P</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size92A')">92A,B,C</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size106A')">106A</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size112A')">112A</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size120A')">120PA,PB</button>
+                <button class="filter-btn active" onclick="filterSize(event, '84A,B')">84A/84B</button>
+                <button class="filter-btn" onclick="filterSize(event, '84C,D')">84C/84D</button>
+                <button class="filter-btn" onclick="filterSize(event, '84E,F')">84E/84F</button>
             </div>
-            <div id="size74A" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type74A', 'plan-view')">84㎡A 보기</button></div></div>
-            <div id="size84A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84A', 'plan-view')">84㎡B 보기</button></div></div>
-            <div id="size92A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type92A', 'plan-view')">104㎡A 보기</button></div></div>
-            <div id="size106A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type106A', 'plan-view')">84㎡A 보기</button></div></div>
-            <div id="size112A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type112A', 'plan-view')">84㎡B 보기</button></div></div>
-            <div id="size120A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type120A', 'plan-view')">104㎡A 보기</button></div></div>
+            <div id="84A,B" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84A,B', 'plan-view')">84㎡A,B 보기</button></div></div>
+            <div id="84C,D" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84C,D', 'plan-view')">84㎡C,D 보기</button></div></div>
+            <div id="84E,F" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84E,F', 'plan-view')">84㎡D,F 보기</button></div></div>
 
             
-            <div id="type74A" class="sub-tab-content active"><img src="img/42.jpg"></div>
-            <div id="type84A" class="sub-tab-content"><img src="img/44.jpg"><img src="img/46.jpg"><img src="img/48.jpg"><img src="img/50.jpg"><img src="img/52.jpg"><img src="img/54.jpg"></div>
-            <div id="type92A" class="sub-tab-content"><img src="img/56.jpg"><img src="img/58.jpg"><img src="img/60.jpg"></div>
-            <div id="type106A" class="sub-tab-content"><img src="img/62.jpg"></div>
-            <div id="type112A" class="sub-tab-content"><img src="img/64.jpg"></div>
-            <div id="type120A" class="sub-tab-content"><img src="img/66.jpg"><img src="img/68.jpg"></div>
+            <div id="type84A,B" class="sub-tab-content active"><img src="img/9.jpg"></div>
+            <div id="type84C,D" class="sub-tab-content"><img src="img/10.jpg"></div>
+            <div id="type84E,F" class="sub-tab-content"><img src="img/11.jpg"></div>
         </div>
         <div class="reservation-card mobile-res-only">
             <div class="res-container">
@@ -555,6 +538,42 @@
         </div>
     </div>
 
+    <div id="tab3" class="tab-content">
+        <img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg"><img src="img/17.jpg"><img src="img/18.jpg"><img src="img/19.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab4" class="tab-content">
+        <img src="img/27.jpg"><img src="img/30.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab5" class="tab-content">
+        <img src="img/32.jpg"><img src="img/36.jpg"><img src="img/37.jpg"><img src="img/38.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+    
     <script>
         window.addEventListener('DOMContentLoaded', function() {
             const pop = document.getElementById('introPopup');
