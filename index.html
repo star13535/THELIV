@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
 
+    <script>
+        // 전역 변수 선언: 관리할 데이터들을 이곳에 모아둡니다.
+        const TEAM_LEADER_NAME = "장영희";
+        const TEAM_LEADER_PHONE = "01033230322";
+    </script>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="수원 오목천역 더리브 - 장영희 팀장">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://star13535.github.io/ELIF-THEHUE/img/YNG.jpg">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>수원 오목천역 더리브 - 장영희 팀장</title>
+    
+    <link rel="icon" href="img/logo.png" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* [공통 설정 - 엘리프 공식 홈 테마 반영: 프리미엄 딥 그린 & 베이지 톤] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            background-color: #faf9f5; /* 엘리프 특유의 따뜻하고 고급스러운 베이지 스톤 톤 */
+            color: #1e2d29; /* 가독성을 높인 딥 에버그린 차콜 */
+            text-align: center; 
+            -webkit-font-smoothing: antialiased;
+        }
+        img { width: 100%; height: auto; display: block; vertical-align: middle; }
+
+        /* [1. 인트로 팝업 - 모던 디자인 및 블러 처리 적용] */
+        .intro-popup-container { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+            background: rgba(0, 48, 40, 0.65); /* 브랜드 에버그린 반투명 */
+            backdrop-filter: blur(8px); /* 트렌디한 뒷배경 흐림 효과 */
+            z-index: 10000; align-items: center; justify-content: center; padding: 15px;
+        }
+        .intro-popup-content { 
+            position: relative; width: 95%; max-width: 420px; 
+            animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; 
+            transform-origin: center center; opacity: 0;
+        }
+        @keyframes fadeInScale {
+            0% { transform: translateY(-30px) scale(0.92); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .intro-popup-content img { 
+            border-radius: 20px; 
+            border: 2px solid #c3a277; /* 엘리프의 품격 있는 골드 테두리 */
+            box-shadow: 0 25px 50px -12px rgba(0, 48, 40, 0.4); 
+        }
+        .pop-close-x { 
+            position: absolute; top: 15px; right: 15px; width: 34px; height: 34px; 
+            cursor: pointer; z-index: 2; 
+            background: rgba(0, 48, 40, 0.85); 
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%; color: #fff; 
+            line-height: 31px; font-weight: 500; font-style: normal;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .pop-close-x:hover {
+            background: #c3a277;
+            color: #003027;
+            border-color: #c3a277;
+        }
+
+        /* [2. 명함 & 예약 폼 섹션 - 초정밀 프리미엄 레이아웃] */
+        .business-card, .reservation-card { 
+            width: 100%; 
+            background: #fff; 
+            padding: 40px 20px; 
+            border-bottom: 1px solid #f2eedf; 
+        }
+        .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
+        .card-container img { 
+            border-radius: 16px; 
+            border: 1px solid rgba(195, 162, 119, 0.2); /* 은은한 골드 마감 테두리 */
+            box-shadow: 0 15px 35px -5px rgba(0, 48, 40, 0.08); 
+            transition: transform 0.3s;
+        }
+        .card-container img:hover {
+            transform: translateY(-4px);
+        }
+        .card-btn-call { 
+            display: block; 
+            margin-top: 20px; 
+            padding: 15px 0; 
+            background: linear-gradient(135deg, #004d40, #003027); /* 브랜드 딥 그린 그라데이션 */
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+            box-shadow: 0 8px 16px -4px rgba(0, 48, 40, 0.3);
+            border: 1px solid rgba(195, 162, 119, 0.3); /* 프리미엄 골드 라인 */
+            transition: all 0.3s;
+        }
+        .card-btn-call:hover {
+            background: linear-gradient(135deg, #c3a277, #a9895f); /* 호버 시 품격 있는 브론즈 골드 */
+            border-color: #a9895f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -4px rgba(195, 162, 119, 0.4);
+        }
+
+        /* [우측 상담 예약 박스 - 엘리프 딥 에버그린 & 샴페인 골드 극대화] */
+        .res-container { 
+            border: 1px solid #c3a277; /* 은은하고 얇은 럭셔리 골드 테두리 */
+            border-radius: 24px; 
+            padding: 30px 24px; 
+            background: linear-gradient(135deg, #003027, #004d40); /* 프리미엄 엘리프 에버그린 그라데이션 */
+            box-shadow: 0 20px 40px -10px rgba(0, 48, 40, 0.25); 
+            color: #fff; 
+        }
+        
+        .res-container h3 { 
+            font-size: 19px; 
+            color: #c3a277; /* 엘리프의 골드로 세련되게 강조 */
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+            text-shadow: none;
+        }
+        
+        .res-input { 
+            width: 100%; 
+            padding: 14px 16px; 
+            margin-bottom: 12px; 
+            border: 1px solid rgba(195, 162, 119, 0.25); /* 인풋 박스도 골드 매칭 */
+            border-radius: 10px; 
+            font-size: 14px; 
+            background: rgba(255, 255, 255, 0.98); 
+            color: #003027;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .res-input:focus {
+            outline: none;
+            border-color: #c3a277;
+            box-shadow: 0 0 0 3px rgba(195, 162, 119, 0.2);
+        }
+        
+        .res-btn { 
+            width: 100%; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #c3a277, #a9895f); /* 찬란하고 럭셔리한 샴페인 골드버튼 */
+            color: #ffffff; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            box-shadow: 0 6px 20px rgba(195, 162, 119, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .res-btn:hover {
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(195, 162, 119, 0.45);
+            filter: brightness(1.05);
+        }
+
+        /* [3. 타이틀 & 배너] */
+        .main-title { 
+            background-color: #fff; 
+            padding: 60px 20px; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 180px; 
+            border-bottom: 1px solid #f2eedf;
+        }
+        .main-title .inner-logo { display: none; }
+        .main-title h2 { 
+            font-size: 28px; 
+            color: #004d40; /* 엘리프 메인 딥 그린 */
+            font-weight: 700; 
+            letter-spacing: -1.5px; 
+            line-height: 1.25; 
+            word-break: keep-all; 
+        }
+        .main-title p { 
+            font-size: 15px; 
+            color: #556661; /* 차분한 그리니시 그레이 */
+            margin-top: 12px; 
+            word-break: keep-all; 
+            font-weight: 400;
+        }
+        
+        .point-banner { 
+            background: linear-gradient(135deg, #003027, #004d40); 
+            color: #fff; 
+            padding: 20px 10px; 
+            font-size: 17px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+            border-top: 1px solid #c3a277; 
+            border-bottom: 1px solid #c3a277; 
+            text-shadow: none;
+            box-shadow: inset 0 0 20px rgba(195, 162, 119, 0.1);
+            animation: bannerPulse 3s infinite ease-in-out; 
+        }
+        .point-banner a { 
+            color: #c3a277; 
+            text-decoration: none; 
+            border-bottom: 1px solid rgba(195, 162, 119, 0.4);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+        .point-banner a:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        @keyframes bannerPulse { 
+            0% { background-color: #003027; } 
+            50% { background-color: #004d40; } 
+            100% { background-color: #003027; } 
+        }
+
+        /* [4. 탭 메뉴 - 세련된 미니멀 보더 스타일] */
+        .tab-menu { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 2000; 
+            border-bottom: 2px solid #004d40; 
+            box-shadow: 0 4px 20px rgba(0, 48, 40, 0.04);
+        }
+        .tab-btn { 
+            flex: 1; 
+            min-width: 20%; 
+            padding: 18px 5px; 
+            border: none; 
+            background: #fff; 
+            font-size: 15px; 
+            font-weight: 500; 
+            color: #556661; 
+            cursor: pointer; 
+            border-right: 1px solid #f2eedf; 
+            transition: all 0.3s;
+        }
+        .tab-btn:hover {
+            color: #004d40;
+            background: #fcfbfa;
+        }
+        .tab-btn.active { 
+            background: #004d40; 
+            color: #fff; 
+            font-weight: 700;
+        }
+
+        .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
+        .tab-content.active { display: block !important; }
+
+        /* [5. 탭 콘텐츠 & 세대안내 복합 필터] */
+        .view-mode-selector { 
+            display: flex; 
+            background: #f5f4ef; 
+            margin: 0; 
+            padding: 12px; 
+            position: sticky; 
+            top: 55px; 
+            z-index: 1500; 
+            border-bottom: 1px solid #e2ded0; 
+        }
+        .mode-btn { 
+            flex: 1; 
+            padding: 12px; 
+            border: none; 
+            background: #e2ded0; 
+            font-weight: 700; 
+            color: #556661; 
+            cursor: pointer; 
+            border-radius: 8px; 
+            margin: 0 5px; 
+            transition: all 0.2s;
+        }
+        .mode-btn.active { 
+            background: #004d40; 
+            color: #fff; 
+        }
+        .mode-content, .sub-tab-content { display: none; }
+        .mode-content.active, .sub-tab-content.active { display: block !important; }
+        
+        .size-filter, .type-group.active { 
+            position: sticky; 
+            top: 130px; 
+            z-index: 1000; 
+            background: #fff; 
+            border-bottom: 1px solid #f2eedf; 
+            transition: all 0.3s ease; 
+        }
+        .size-filter.scrolled, .type-group.active.scrolled { 
+            background: transparent !important; 
+            border-bottom: none !important; 
+        }
+        
+        /* 모바일 스와이프 안내 문구용 클래스 추가 */
+        .swipe-hint-text {
+            display: none;
+            font-size: 11px;
+            color: #c3a277;
+            margin-top: 15px;
+            margin-bottom: -5px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .size-filter { 
+            display: flex; 
+            justify-content: flex-start; /* 모바일에서 횡스크롤 유도를 위해 왼쪽 시작 정렬 */
+            gap: 8px; 
+            padding: 16px 12px 24px 12px; /* 세련된 하단 스크롤바 정렬을 위한 아래쪽 여백 확보 */
+            overflow-x: auto; 
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #c3a277 #f2eedf; /* Firefox */
+        }
+
+        /* 럭셔리 모바일 전용 맞춤형 웹킷 스크롤바 디자인 */
+        @media (max-width: 1023px) {
+            .swipe-hint-text {
+                display: block; /* 모바일 전용 가이드 텍스트 노출 */
+                animation: pulseSwipeHint 2s infinite ease-in-out;
+            }
+            
+            .size-filter::-webkit-scrollbar { 
+                display: block !important;
+                height: 3px; /* 얇고 미니멀하며 눈에 거슬리지 않는 트랙 두께 */
+            }
+            .size-filter::-webkit-scrollbar-track {
+                background: #f2eedf; /* 은은한 샌드베이지 배경 */
+                border-radius: 10px;
+            }
+            .size-filter::-webkit-scrollbar-thumb {
+                background: #c3a277; /* 프리미엄 골드 바 */
+                border-radius: 10px;
+            }
+        }
+        
+        @keyframes pulseSwipeHint {
+            0%, 100% { opacity: 0.6; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .filter-btn, .sub-tab-btn { 
+            flex: 0 0 auto; 
+            min-width: 95px; 
+            padding: 10px 18px; 
+            border: 1px solid #004d40; 
+            background: #fff; 
+            color: #004d40; 
+            border-radius: 30px; /* 미니멀 캡슐 라운드 */
+            font-weight: 700; 
+            font-size: 13px;
+            cursor: pointer; 
+            transition: all 0.25s;
+        }
+        .filter-btn:hover, .sub-tab-btn:hover {
+            background: #faf9f5;
+        }
+        .filter-btn.active, .sub-tab-btn.active { 
+            background: #004d40 !important; 
+            color: #fff !important; 
+            border-color: #004d40;
+            box-shadow: 0 4px 10px rgba(0, 48, 40, 0.15);
+        }
+        .type-group { display: none; padding: 18px 10px; text-align: center; }
+        #photo-view .type-group.active { display: block !important; }
+        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+
+        /* [6. PC 전용 고급화 고정식 명함/예약 레이아웃] */
+        @media (min-width: 1024px) {
+            .size-filter {
+                justify-content: center; /* PC 환경에서는 깔끔한 가운데 정렬 고수 */
+                padding: 16px 12px;
+            }
+            .size-filter::-webkit-scrollbar {
+                display: none !important; /* PC에서는 스크롤바가 숨겨짐 */
+            }
+
+            .business-card, .reservation-card { 
+                position: fixed; 
+                top: 55%; 
+                width: 320px; 
+                z-index: 1100; 
+                border: 1px solid rgba(195, 162, 119, 0.25); 
+                border-radius: 24px; 
+                background: rgba(255, 255, 255, 0.95); 
+                backdrop-filter: blur(10px); 
+                box-shadow: 0 30px 60px -15px rgba(0, 48, 40, 0.12); 
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+            }
+            .business-card { left: 40px; transform: translateY(-50%); }
+            .reservation-card { right: 40px; transform: translateY(-50%); }
+            .business-card.scrolled, .reservation-card.scrolled { top: 50% !important; }
+            
+            .main-title .inner-logo { 
+                display: block; 
+                position: absolute; 
+                left: 115px; 
+                top: 50%; 
+                transform: translateY(-50%); 
+                height: 120px; 
+                z-index: 1; 
+            }
+            .main-title .inner-logo img { height: 100%; width: auto; object-fit: contain; }
+            .main-title h2 { font-size: 40px; letter-spacing: -2px; }
+            .main-title p { font-size: 18px; margin-top: 15px; }
+            
+            .mobile-res-only { display: none; } 
+        }
+
+        /* [7. 모바일 전용 조화로운 세팅] */
+        @media (max-width: 1023px) {
+            .reservation-card { 
+                position: static; 
+                border: none; 
+                border-top: 8px solid #f2eedf; 
+                padding: 50px 20px; 
+                background: #fbfaf7; 
+            }
+            #resCard { display: none; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card" id="pcCard">
+        <div class="card-container">
+            <img src="img/YNG.jpg" alt="명함">
+
+            <!-- <a href="tel:01065966692" class="card-btn-call">📞 김종직 팀장 상담 바로 연결</a> -->
+            <a href="#" class="card-btn-call set-phone-link">
+                📞 <span class="set-name"></span> 팀장 상담 바로 연결
+            </a>     
+        </div>
+    </div>
+
+    <div class="reservation-card" id="resCard">
+        <div class="res-container">
+            <h3>📞 전화 상담 예약하기</h3>
+            <input type="text" id="pcName" class="res-input" placeholder="이름">
+            <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만 입력)">
+            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone')">✉️ 상담 예약 신청</button>
+        </div>
+    </div>
+    
+    <div class="intro-popup-container" id="introPopup">
+        <div class="intro-popup-content">
+            <i class="pop-close-x" id="popClose">X</i>
+            <img src="img/popup.png" alt="특별 분양 광고">
+        </div>
+    </div>
+    
+    <div class="main-title">
+        <div class="inner-logo"><img src="img/logo.png" alt="더샵 로고"></div>
+        <div class="title-text">
+            <h2>엘리프 한신더휴 수원</h2>
+            <p>계룡건설과 한신공영이 함께 만드는 1,149세대 브랜드타운 명품 대단지!</p>
+        </div>
+    </div>
+    
+    <div class="point-banner">
+        ✨ <span class="set-name"></span> 팀장 : 
+        <a href="#" class="set-phone-link">
+            <span class="set-phone-text"></span>
+        </a> ✨
+    </div>
+
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업안내</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">프리미엄</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">단지&세대안내</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <img src="img/2.jpg"><img src="img/3.jpg"><img src="img/6.jpg"><img src="img/7.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName1" class="res-input" placeholder="이름">
+                <input type="tel" id="mPhone1" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName1', 'mPhone1')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <img src="img/8.jpg"><img src="img/9.jpg"><img src="img/10.jpg"><img src="img/13.jpg"><img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="tab3" class="tab-content">
+        <div class="view-mode-selector">
+            <button class="mode-btn active" onclick="changeViewMode(event, 'photo-view')">🏢 단지 안내</button>
+            <button class="mode-btn" onclick="changeViewMode(event, 'plan-view')">🏠 평면도 안내</button>
+        </div>
+        <div id="photo-view" class="mode-content active">
+            <div class="type-group active"><div class="sub-tab-menu">
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'danji1', 'photo-view')">조감도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji2', 'photo-view')">단지/동호수 배치도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji3', 'photo-view')">커뮤니티 센터</button>
+            </div></div>
+            <div id="danji1" class="sub-tab-content active"><img src="img/21.jpg"></div>
+            <div id="danji2" class="sub-tab-content"><img src="img/32.jpg"><img src="img/33.jpg"><img src="img/34.jpg"><img src="img/35.jpg"></div>
+            <div id="danji3" class="sub-tab-content"><img src="img/36.jpg"><img src="img/37.jpg"><img src="img/38.jpg"><img src="img/39.jpg"><img src="img/40.jpg"><img src="img/41.jpg"></div>
+        </div>
+        <div id="plan-view" class="mode-content">
+            <!-- 모바일 가이드 문구 추가 영역 -->
+            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, 'size74A')">74A</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84A')">84A~P</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size92A')">92A,B,C</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size106A')">106A</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size112A')">112A</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size120A')">120PA,PB</button>
+            </div>
+            <div id="size74A" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type74A', 'plan-view')">84㎡A 보기</button></div></div>
+            <div id="size84A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84A', 'plan-view')">84㎡B 보기</button></div></div>
+            <div id="size92A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type92A', 'plan-view')">104㎡A 보기</button></div></div>
+            <div id="size106A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type106A', 'plan-view')">84㎡A 보기</button></div></div>
+            <div id="size112A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type112A', 'plan-view')">84㎡B 보기</button></div></div>
+            <div id="size120A" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type120A', 'plan-view')">104㎡A 보기</button></div></div>
+
+            
+            <div id="type74A" class="sub-tab-content active"><img src="img/42.jpg"></div>
+            <div id="type84A" class="sub-tab-content"><img src="img/44.jpg"><img src="img/46.jpg"><img src="img/48.jpg"><img src="img/50.jpg"><img src="img/52.jpg"><img src="img/54.jpg"></div>
+            <div id="type92A" class="sub-tab-content"><img src="img/56.jpg"><img src="img/58.jpg"><img src="img/60.jpg"></div>
+            <div id="type106A" class="sub-tab-content"><img src="img/62.jpg"></div>
+            <div id="type112A" class="sub-tab-content"><img src="img/64.jpg"></div>
+            <div id="type120A" class="sub-tab-content"><img src="img/66.jpg"><img src="img/68.jpg"></div>
+        </div>
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+            <script>
+                window.addEventListener('DOMContentLoaded', function() {
+                    const pop = document.getElementById('introPopup');
+                    pop.style.display = 'flex';
+                    document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
+                    pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
+        
+                    window.addEventListener('scroll', function() {
+                        let s = window.pageYOffset || document.documentElement.scrollTop;
+                        const pcCard = document.getElementById('pcCard');
+                        const resCard = document.getElementById('resCard');
+        
+                        if (window.innerWidth >= 1024) {
+                            if (s > 100) {
+                                pcCard?.classList.add('scrolled');
+                                resCard?.classList.add('scrolled');
+                            } else {
+                                pcCard?.classList.remove('scrolled');
+                                resCard?.classList.remove('scrolled');
+                            }
+                        }
+        
+                        document.querySelectorAll('.size-filter, .type-group.active').forEach(el => {
+                                if (s > 400) el.classList.add('scrolled');
+                                else el.classList.remove('scrolled');
+                            });
+                        
+                    });
+                });
+
+
+                
+        function sendReservation(nameId, phoneId) {
+            const name = document.getElementById(nameId).value;
+            let rawPhone = document.getElementById(phoneId).value;
+        
+            // 1. 숫자만 골라내기
+            let phone = rawPhone.replace(/[^0-9]/g, "");
+        
+            if (!name || !phone) {
+                alert("성함과 연락처를 모두 입력해주세요.");
+                return;
+            }
+        
+            // 2. 숫자만 있는 번호를 '010-0000-0000' 형식으로 변환합니다.
+        let formattedPhone = "";
+        if (phone.length === 11) {
+            // (010)(2481)(6333) -> 010-2481-6333
+            formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+        } else if (phone.length === 10) {
+            // (010)(248)(1632) -> 010-248-1632
+            formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3})(\d{4})/, '$1-$2-$3');
+        } else {
+            formattedPhone = phone; 
+        }
+        
+            // 3. 메시지 구성 및 모바일/PC 분기 처리
+            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 전화 상담 신청합니다.`;
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            
+            // 이 주소를 한 번만 정의합니다.
+            const smsLink = `sms:${TEAM_LEADER_PHONE}${isIOS ? '&' : '?'}body=${encodeURIComponent(message)}`;        
+            if (isIOS || isAndroid) {
+                // 모바일은 문자 앱 실행
+                window.location.href = smsLink;
+            } else {
+                // PC는 안내 창만 띄우기 (여기서 멈춤)
+                const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+            alert(`PC에서는 문자 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 접수 안내]\n${TEAM_LEADER_NAME} 팀장 번호: ${formatted}\n\n위 번호로 문자를 보내주시면 바로 연락드리겠습니다! ✨`);            }
+        }
+
+        function openTab(e, t) {
+            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            document.getElementById(t).classList.add("active");
+            e.currentTarget.classList.add("active");
+            if(t === 'tab3') changeViewMode(null, 'photo-view');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function changeViewMode(e, m) {
+            document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
+            document.getElementById(m).classList.add('active');
+            if(e) {
+                e.currentTarget.classList.add('active');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            }
+            else document.querySelector('.mode-btn').classList.add('active');
+            
+            if(m === 'photo-view') document.querySelector('#photo-view .sub-tab-btn').click();
+            else document.querySelector('.filter-btn').click();
+        }
+
+        function filterSize(e, s) {
+            document.querySelectorAll('#plan-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
+            document.getElementById(s).classList.add('active');
+            e.currentTarget.classList.add('active');
+            document.getElementById(s).querySelector('.sub-tab-btn').click();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function openSubTab(e, s, p) {
+            const parent = document.getElementById(p);
+            parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
+            document.getElementById(s).classList.add("active");
+            e.currentTarget.classList.add("active");
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+                
+        window.addEventListener('DOMContentLoaded', function() {
+            const name = TEAM_LEADER_NAME;
+            const phone = TEAM_LEADER_PHONE;
+            const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+        
+            // 1. 모든 이름을 한꺼번에 교체
+            document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
+        
+            // 2. 모든 전화번호 텍스트를 한꺼번에 교체
+            document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
+        
+            // 3. 모든 전화걸기 링크를 한꺼번에 교체
+            document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
+            
+            // 4. "장지원 팀장" 같이 뒤에 글자가 붙는 경우
+            document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
+
+            // [핵심 코드] 브라우저 탭 제목을 동적으로 변경
+            document.title = "더샵 오산역아크시티 - " + name + " 팀장";
+        });
+                
+    </script>
+</body>
+</html>
