@@ -21,12 +21,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* [공통 설정 - 엘리프 공식 홈 테마 반영: 프리미엄 딥 그린 & 베이지 톤] */
+        /* [공통 설정 - THE LIV 브랜드 테마 반영: 프리미엄 다크 네이비 & 브라운 골드 톤] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Noto Sans KR', sans-serif; 
-            background-color: #faf9f5; /* 엘리프 특유의 따뜻하고 고급스러운 베이지 스톤 톤 */
-            color: #1e2d29; /* 가독성을 높인 딥 에버그린 차콜 */
+            background-color: #faf9f6; /* 따뜻하고 고급스러운 베이지 스톤 베이스 */
+            color: #152232; /* 가독성을 극대화한 THE LIV 다크 네이비 차콜 */
             text-align: center; 
             -webkit-font-smoothing: antialiased;
         }
@@ -35,7 +35,7 @@
         /* [1. 인트로 팝업 - 모던 디자인 및 블러 처리 적용] */
         .intro-popup-container { 
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-            background: rgba(0, 48, 40, 0.65); /* 브랜드 에버그린 반투명 */
+            background: rgba(21, 47, 71, 0.7); /* THE LIV 다크 네이비 반투명 */
             backdrop-filter: blur(8px); /* 트렌디한 뒷배경 흐림 효과 */
             z-index: 10000; align-items: center; justify-content: center; padding: 15px;
         }
@@ -50,13 +50,13 @@
         }
         .intro-popup-content img { 
             border-radius: 20px; 
-            border: 2px solid #c3a277; /* 엘리프의 품격 있는 골드 테두리 */
-            box-shadow: 0 25px 50px -12px rgba(0, 48, 40, 0.4); 
+            border: 2px solid #b28970; /* THE LIV의 품격 있는 브라운 골드 테두리 */
+            box-shadow: 0 25px 50px -12px rgba(21, 47, 71, 0.5); 
         }
         .pop-close-x { 
             position: absolute; top: 15px; right: 15px; width: 34px; height: 34px; 
             cursor: pointer; z-index: 2; 
-            background: rgba(0, 48, 40, 0.85); 
+            background: rgba(21, 47, 71, 0.85); 
             border: 1.5px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%; color: #fff; 
             line-height: 31px; font-weight: 500; font-style: normal;
@@ -64,9 +64,9 @@
             transition: all 0.2s;
         }
         .pop-close-x:hover {
-            background: #c3a277;
-            color: #003027;
-            border-color: #c3a277;
+            background: #b28970;
+            color: #15212f;
+            border-color: #b28970;
         }
 
         /* [2. 명함 & 예약 폼 섹션 - 초정밀 프리미엄 레이아웃] */
@@ -74,13 +74,13 @@
             width: 100%; 
             background: #fff; 
             padding: 40px 20px; 
-            border-bottom: 1px solid #f2eedf; 
+            border-bottom: 1px solid #eef0f2; 
         }
         .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
         .card-container img { 
             border-radius: 16px; 
-            border: 1px solid rgba(195, 162, 119, 0.2); /* 은은한 골드 마감 테두리 */
-            box-shadow: 0 15px 35px -5px rgba(0, 48, 40, 0.08); 
+            border: 1px solid rgba(178, 137, 112, 0.25); /* 은은한 브라운 마감 테두리 */
+            box-shadow: 0 15px 35px -5px rgba(21, 47, 71, 0.08); 
             transition: transform 0.3s;
         }
         .card-container img:hover {
@@ -90,37 +90,37 @@
             display: block; 
             margin-top: 20px; 
             padding: 15px 0; 
-            background: linear-gradient(135deg, #004d40, #003027); /* 브랜드 딥 그린 그라데이션 */
+            background: linear-gradient(135deg, #152f47, #0f2233); /* 브랜드 다크 네이비 그라데이션 */
             color: #fff; 
             text-decoration: none; 
             border-radius: 12px; 
             font-size: 15px; 
             font-weight: 700; 
             letter-spacing: -0.5px;
-            box-shadow: 0 8px 16px -4px rgba(0, 48, 40, 0.3);
-            border: 1px solid rgba(195, 162, 119, 0.3); /* 프리미엄 골드 라인 */
+            box-shadow: 0 8px 16px -4px rgba(21, 47, 71, 0.3);
+            border: 1px solid rgba(178, 137, 112, 0.3); /* 프리미엄 브라운 골드 라인 */
             transition: all 0.3s;
         }
         .card-btn-call:hover {
-            background: linear-gradient(135deg, #c3a277, #a9895f); /* 호버 시 품격 있는 브론즈 골드 */
-            border-color: #a9895f;
+            background: linear-gradient(135deg, #b28970, #96715b); /* 호버 시 품격 있는 브라운 골드 */
+            border-color: #96715b;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px -4px rgba(195, 162, 119, 0.4);
+            box-shadow: 0 10px 20px -4px rgba(178, 137, 112, 0.4);
         }
 
-        /* [우측 상담 예약 박스 - 엘리프 딥 에버그린 & 샴페인 골드 극대화] */
+        /* [우측 상담 예약 박스 - THE LIV 다크 네이비 & 골드 브라운 극대화] */
         .res-container { 
-            border: 1px solid #c3a277; /* 은은하고 얇은 럭셔리 골드 테두리 */
+            border: 1px solid #b28970; /* 은은하고 얇은 럭셔리 브라운 골드 테두리 */
             border-radius: 24px; 
             padding: 30px 24px; 
-            background: linear-gradient(135deg, #003027, #004d40); /* 프리미엄 엘리프 에버그린 그라데이션 */
-            box-shadow: 0 20px 40px -10px rgba(0, 48, 40, 0.25); 
+            background: linear-gradient(135deg, #112538, #1c3d5c); /* 프리미엄 다크 네이비 그라데이션 */
+            box-shadow: 0 20px 40px -10px rgba(21, 47, 71, 0.3); 
             color: #fff; 
         }
         
         .res-container h3 { 
             font-size: 19px; 
-            color: #c3a277; /* 엘리프의 골드로 세련되게 강조 */
+            color: #b28970; /* 더리브 브라운 골드로 세련되게 강조 */
             margin-bottom: 20px; 
             font-weight: 700; 
             letter-spacing: -0.5px;
@@ -131,37 +131,37 @@
             width: 100%; 
             padding: 14px 16px; 
             margin-bottom: 12px; 
-            border: 1px solid rgba(195, 162, 119, 0.25); /* 인풋 박스도 골드 매칭 */
+            border: 1px solid rgba(178, 137, 112, 0.3); /* 인풋 박스 브라운 테두리 매칭 */
             border-radius: 10px; 
             font-size: 14px; 
             background: rgba(255, 255, 255, 0.98); 
-            color: #003027;
+            color: #152f47;
             font-weight: 500;
             transition: all 0.3s;
         }
         .res-input:focus {
             outline: none;
-            border-color: #c3a277;
-            box-shadow: 0 0 0 3px rgba(195, 162, 119, 0.2);
+            border-color: #b28970;
+            box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.2);
         }
         
         .res-btn { 
             width: 100%; 
             padding: 15px; 
-            background: linear-gradient(135deg, #c3a277, #a9895f); /* 찬란하고 럭셔리한 샴페인 골드버튼 */
+            background: linear-gradient(135deg, #b28970, #96715b); /* 찬란하고 럭셔리한 브라운 골드 버튼 */
             color: #ffffff; 
             border: none; 
             border-radius: 10px; 
             font-size: 15px; 
             font-weight: 700; 
             cursor: pointer; 
-            box-shadow: 0 6px 20px rgba(195, 162, 119, 0.3);
+            box-shadow: 0 6px 20px rgba(178, 137, 112, 0.3);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
         .res-btn:hover {
             transform: translateY(-2px); 
-            box-shadow: 0 8px 25px rgba(195, 162, 119, 0.45);
+            box-shadow: 0 8px 25px rgba(178, 137, 112, 0.45);
             filter: brightness(1.05);
         }
 
@@ -174,12 +174,12 @@
             align-items: center; 
             justify-content: center; 
             min-height: 180px; 
-            border-bottom: 1px solid #f2eedf;
+            border-bottom: 1px solid #eef0f2;
         }
         .main-title .inner-logo { display: none; }
         .main-title h2 { 
             font-size: 28px; 
-            color: #004d40; /* 엘리프 메인 딥 그린 */
+            color: #152f47; /* 더리브 메인 다크 네이비 */
             font-weight: 700; 
             letter-spacing: -1.5px; 
             line-height: 1.25; 
@@ -187,29 +187,29 @@
         }
         .main-title p { 
             font-size: 15px; 
-            color: #556661; /* 차분한 그리니시 그레이 */
+            color: #5c6b73; /* 차분한 블루이시 그레이 */
             margin-top: 12px; 
             word-break: keep-all; 
             font-weight: 400;
         }
         
         .point-banner { 
-            background: linear-gradient(135deg, #003027, #004d40); 
+            background: linear-gradient(135deg, #112538, #152f47); 
             color: #fff; 
             padding: 20px 10px; 
             font-size: 17px; 
             font-weight: 700; 
             letter-spacing: -0.5px;
-            border-top: 1px solid #c3a277; 
-            border-bottom: 1px solid #c3a277; 
+            border-top: 1px solid #b28970; 
+            border-bottom: 1px solid #b28970; 
             text-shadow: none;
-            box-shadow: inset 0 0 20px rgba(195, 162, 119, 0.1);
+            box-shadow: inset 0 0 20px rgba(178, 137, 112, 0.15);
             animation: bannerPulse 3s infinite ease-in-out; 
         }
         .point-banner a { 
-            color: #c3a277; 
+            color: #b28970; 
             text-decoration: none; 
-            border-bottom: 1px solid rgba(195, 162, 119, 0.4);
+            border-bottom: 1px solid rgba(178, 137, 112, 0.5);
             padding-bottom: 2px;
             transition: all 0.2s;
         }
@@ -218,9 +218,9 @@
             border-color: #ffffff;
         }
         @keyframes bannerPulse { 
-            0% { background-color: #003027; } 
-            50% { background-color: #004d40; } 
-            100% { background-color: #003027; } 
+            0% { background-color: #112538; } 
+            50% { background-color: #152f47; } 
+            100% { background-color: #112538; } 
         }
 
         /* [4. 탭 메뉴 - 세련된 미니멀 보더 스타일] */
@@ -232,8 +232,8 @@
             position: sticky; 
             top: 0; 
             z-index: 2000; 
-            border-bottom: 2px solid #004d40; 
-            box-shadow: 0 4px 20px rgba(0, 48, 40, 0.04);
+            border-bottom: 2px solid #152f47; 
+            box-shadow: 0 4px 20px rgba(21, 47, 71, 0.05);
         }
         .tab-btn { 
             flex: 1; 
@@ -243,17 +243,17 @@
             background: #fff; 
             font-size: 15px; 
             font-weight: 500; 
-            color: #556661; 
+            color: #5c6b73; 
             cursor: pointer; 
-            border-right: 1px solid #f2eedf; 
+            border-right: 1px solid #eef0f2; 
             transition: all 0.3s;
         }
         .tab-btn:hover {
-            color: #004d40;
-            background: #fcfbfa;
+            color: #152f47;
+            background: #f8fafc;
         }
         .tab-btn.active { 
-            background: #004d40; 
+            background: #152f47; 
             color: #fff; 
             font-weight: 700;
         }
@@ -264,28 +264,28 @@
         /* [5. 탭 콘텐츠 & 세대안내 복합 필터] */
         .view-mode-selector { 
             display: flex; 
-            background: #f5f4ef; 
+            background: #f1f3f5; 
             margin: 0; 
             padding: 12px; 
             position: sticky; 
             top: 55px; 
             z-index: 1500; 
-            border-bottom: 1px solid #e2ded0; 
+            border-bottom: 1px solid #e2e6ea; 
         }
         .mode-btn { 
             flex: 1; 
             padding: 12px; 
             border: none; 
-            background: #e2ded0; 
+            background: #e2e6ea; 
             font-weight: 700; 
-            color: #556661; 
+            color: #5c6b73; 
             cursor: pointer; 
             border-radius: 8px; 
             margin: 0 5px; 
             transition: all 0.2s;
         }
         .mode-btn.active { 
-            background: #004d40; 
+            background: #152f47; 
             color: #fff; 
         }
         .mode-content, .sub-tab-content { display: none; }
@@ -296,7 +296,7 @@
             top: 130px; 
             z-index: 1000; 
             background: #fff; 
-            border-bottom: 1px solid #f2eedf; 
+            border-bottom: 1px solid #eef0f2; 
             transition: all 0.3s ease; 
         }
         .size-filter.scrolled, .type-group.active.scrolled { 
@@ -308,7 +308,7 @@
         .swipe-hint-text {
             display: none;
             font-size: 11px;
-            color: #c3a277;
+            color: #b28970;
             margin-top: 15px;
             margin-bottom: -5px;
             font-weight: 700;
@@ -323,7 +323,7 @@
             padding: 16px 12px 24px 12px; /* 세련된 하단 스크롤바 정렬을 위한 아래쪽 여백 확보 */
             overflow-x: auto; 
             scrollbar-width: thin; /* Firefox */
-            scrollbar-color: #c3a277 #f2eedf; /* Firefox */
+            scrollbar-color: #b28970 #eef0f2; /* Firefox */
         }
 
         /* 럭셔리 모바일 전용 맞춤형 웹킷 스크롤바 디자인 */
@@ -338,11 +338,11 @@
                 height: 3px; /* 얇고 미니멀하며 눈에 거슬리지 않는 트랙 두께 */
             }
             .size-filter::-webkit-scrollbar-track {
-                background: #f2eedf; /* 은은한 샌드베이지 배경 */
+                background: #eef0f2; /* 은은한 트랙 배경 */
                 border-radius: 10px;
             }
             .size-filter::-webkit-scrollbar-thumb {
-                background: #c3a277; /* 프리미엄 골드 바 */
+                background: #b28970; /* 프리미엄 골드 브라운 바 */
                 border-radius: 10px;
             }
         }
@@ -356,9 +356,9 @@
             flex: 0 0 auto; 
             min-width: 95px; 
             padding: 10px 18px; 
-            border: 1px solid #004d40; 
+            border: 1px solid #152f47; 
             background: #fff; 
-            color: #004d40; 
+            color: #152f47; 
             border-radius: 30px; /* 미니멀 캡슐 라운드 */
             font-weight: 700; 
             font-size: 13px;
@@ -366,13 +366,13 @@
             transition: all 0.25s;
         }
         .filter-btn:hover, .sub-tab-btn:hover {
-            background: #faf9f5;
+            background: #fafafa;
         }
         .filter-btn.active, .sub-tab-btn.active { 
-            background: #004d40 !important; 
+            background: #152f47 !important; 
             color: #fff !important; 
-            border-color: #004d40;
-            box-shadow: 0 4px 10px rgba(0, 48, 40, 0.15);
+            border-color: #152f47;
+            box-shadow: 0 4px 10px rgba(21, 47, 71, 0.2);
         }
         .type-group { display: none; padding: 18px 10px; text-align: center; }
         #photo-view .type-group.active { display: block !important; }
@@ -393,11 +393,11 @@
                 top: 55%; 
                 width: 320px; 
                 z-index: 1100; 
-                border: 1px solid rgba(195, 162, 119, 0.25); 
+                border: 1px solid rgba(178, 137, 112, 0.3); 
                 border-radius: 24px; 
                 background: rgba(255, 255, 255, 0.95); 
                 backdrop-filter: blur(10px); 
-                box-shadow: 0 30px 60px -15px rgba(0, 48, 40, 0.12); 
+                box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
                 transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
             }
             .business-card { left: 40px; transform: translateY(-50%); }
@@ -425,9 +425,9 @@
             .reservation-card { 
                 position: static; 
                 border: none; 
-                border-top: 8px solid #f2eedf; 
+                border-top: 8px solid #eef0f2; 
                 padding: 50px 20px; 
-                background: #fbfaf7; 
+                background: #fcfdfe; 
             }
             #resCard { display: none; } 
         }
@@ -438,7 +438,6 @@
         <div class="card-container">
             <img src="img/YNG.jpg" alt="명함">
 
-            <!-- <a href="tel:01065966692" class="card-btn-call">📞 김종직 팀장 상담 바로 연결</a> -->
             <a href="#" class="card-btn-call set-phone-link">
                 📞 <span class="set-name"></span> 팀장 상담 바로 연결
             </a>     
@@ -522,7 +521,6 @@
             <div id="danji3" class="sub-tab-content"><img src="img/36.jpg"><img src="img/37.jpg"><img src="img/38.jpg"><img src="img/39.jpg"><img src="img/40.jpg"><img src="img/41.jpg"></div>
         </div>
         <div id="plan-view" class="mode-content">
-            <!-- 모바일 가이드 문구 추가 영역 -->
             <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
             <div class="size-filter">
                 <button class="filter-btn active" onclick="filterSize(event, 'size74A')">74A</button>
@@ -557,38 +555,37 @@
         </div>
     </div>
 
-            <script>
-                window.addEventListener('DOMContentLoaded', function() {
-                    const pop = document.getElementById('introPopup');
-                    pop.style.display = 'flex';
-                    document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
-                    pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            const pop = document.getElementById('introPopup');
+            pop.style.display = 'flex';
+            document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
+            pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
         
-                    window.addEventListener('scroll', function() {
-                        let s = window.pageYOffset || document.documentElement.scrollTop;
-                        const pcCard = document.getElementById('pcCard');
-                        const resCard = document.getElementById('resCard');
+            window.addEventListener('scroll', function() {
+                let s = window.pageYOffset || document.documentElement.scrollTop;
+                const pcCard = document.getElementById('pcCard');
+                const resCard = document.getElementById('resCard');
         
-                        if (window.innerWidth >= 1024) {
-                            if (s > 100) {
-                                pcCard?.classList.add('scrolled');
-                                resCard?.classList.add('scrolled');
-                            } else {
-                                pcCard?.classList.remove('scrolled');
-                                resCard?.classList.remove('scrolled');
-                            }
-                        }
+                if (window.innerWidth >= 1024) {
+                    if (s > 100) {
+                        pcCard?.classList.add('scrolled');
+                        resCard?.classList.add('scrolled');
+                    } else {
+                        pcCard?.classList.remove('scrolled');
+                        resCard?.classList.remove('scrolled');
+                    }
+                }
         
-                        document.querySelectorAll('.size-filter, .type-group.active').forEach(el => {
-                                if (s > 400) el.classList.add('scrolled');
-                                else el.classList.remove('scrolled');
-                            });
-                        
+                document.querySelectorAll('.size-filter, .type-group.active').forEach(el => {
+                        if (s > 400) el.classList.add('scrolled');
+                        else el.classList.remove('scrolled');
                     });
-                });
-
-
                 
+            });
+        });
+
+                        
         function sendReservation(nameId, phoneId) {
             const name = document.getElementById(nameId).value;
             let rawPhone = document.getElementById(phoneId).value;
@@ -602,31 +599,26 @@
             }
         
             // 2. 숫자만 있는 번호를 '010-0000-0000' 형식으로 변환합니다.
-        let formattedPhone = "";
-        if (phone.length === 11) {
-            // (010)(2481)(6333) -> 010-2481-6333
-            formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-        } else if (phone.length === 10) {
-            // (010)(248)(1632) -> 010-248-1632
-            formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3})(\d{4})/, '$1-$2-$3');
-        } else {
-            formattedPhone = phone; 
-        }
+            let formattedPhone = "";
+            if (phone.length === 11) {
+                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+            } else if (phone.length === 10) {
+                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3})(\d{4})/, '$1-$2-$3');
+            } else {
+                formattedPhone = phone; 
+            }
         
             // 3. 메시지 구성 및 모바일/PC 분기 처리
             const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 전화 상담 신청합니다.`;
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
             
-            // 이 주소를 한 번만 정의합니다.
             const smsLink = `sms:${TEAM_LEADER_PHONE}${isIOS ? '&' : '?'}body=${encodeURIComponent(message)}`;        
             if (isIOS || isAndroid) {
-                // 모바일은 문자 앱 실행
                 window.location.href = smsLink;
             } else {
-                // PC는 안내 창만 띄우기 (여기서 멈춤)
                 const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-            alert(`PC에서는 문자 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 접수 안내]\n${TEAM_LEADER_NAME} 팀장 번호: ${formatted}\n\n위 번호로 문자를 보내주시면 바로 연락드리겠습니다! ✨`);            }
+                alert(`PC에서는 문자 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 접수 안내]\n${TEAM_LEADER_NAME} 팀장 번호: ${formatted}\n\n위 번호로 문자를 보내주시면 바로 연락드리겠습니다! ✨`);            }
         }
 
         function openTab(e, t) {
@@ -673,22 +665,13 @@
             const phone = TEAM_LEADER_PHONE;
             const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
         
-            // 1. 모든 이름을 한꺼번에 교체
             document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
-        
-            // 2. 모든 전화번호 텍스트를 한꺼번에 교체
             document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
-        
-            // 3. 모든 전화걸기 링크를 한꺼번에 교체
             document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
-            
-            // 4. "장지원 팀장" 같이 뒤에 글자가 붙는 경우
             document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
 
-            // [핵심 코드] 브라우저 탭 제목을 동적으로 변경
-            document.title = "더샵 오산역아크시티 - " + name + " 팀장";
+            document.title = "수원 오목천역 더리브 - " + name + " 팀장";
         });
-                
     </script>
 </body>
 </html>
