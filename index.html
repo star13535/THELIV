@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
     <script>
         // 전역 변수 선언: 관리할 데이터들을 이곳에 모아둡니다.
         const TEAM_LEADER_NAME = "장영희";
@@ -505,13 +504,13 @@
                 <button class="filter-btn" onclick="filterSize(event, 'size84CD')">84C/84D</button>
                 <button class="filter-btn" onclick="filterSize(event, 'size84EF')">84E/84F</button>
             </div>
-            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84A,B', 'plan-view')">84㎡A,B 보기</button></div></div>
-            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84C,D', 'plan-view')">84㎡C,D 보기</button></div></div>
-            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84E,F', 'plan-view')">84㎡E,F 보기</button></div></div>
+            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', 'plan-view')">84㎡A,B 보기</button></div></div>
+            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', 'plan-view')">84㎡C,D 보기</button></div></div>
+            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', 'plan-view')">84㎡E,F 보기</button></div></div>
 
-            <div id="type84A,B" class="sub-tab-content active"><img src="img/9.jpg"></div>
-            <div id="type84C,D" class="sub-tab-content"><img src="img/10.jpg"></div>
-            <div id="type84E,F" class="sub-tab-content"><img src="img/11.jpg"></div>
+            <div id="type84AB" class="sub-tab-content active"><img src="img/9.jpg"></div>
+            <div id="type84CD" class="sub-tab-content"><img src="img/10.jpg"></div>
+            <div id="type84EF" class="sub-tab-content"><img src="img/11.jpg"></div>
         </div>
         <div class="reservation-card mobile-res-only">
             <div class="res-container">
@@ -561,11 +560,24 @@
     
     <script>
         window.addEventListener('DOMContentLoaded', function() {
+            // 1. 초기 데이터 매핑 및 타이틀 세팅
+            const name = TEAM_LEADER_NAME;
+            const phone = TEAM_LEADER_PHONE;
+            const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+        
+            document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
+            document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
+            document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
+            document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
+            document.title = "수원 오목천역 더리브 - " + name + " 팀장";
+
+            // 2. 인드로 팝업 노출 제어
             const pop = document.getElementById('introPopup');
             pop.style.display = 'flex';
             document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
             pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
         
+            // 3. 스크롤 및 고정 요소 상태 제어
             window.addEventListener('scroll', function() {
                 let s = window.pageYOffset || document.documentElement.scrollTop;
                 const pcCard = document.getElementById('pcCard');
@@ -588,6 +600,7 @@
             });
         });
 
+        // 4. 문자 전송 예약 로직
         function sendReservation(nameId, phoneId) {
             const name = document.getElementById(nameId).value;
             let rawPhone = document.getElementById(phoneId).value;
@@ -607,7 +620,7 @@
                 formattedPhone = phone; 
             }
         
-            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 전화 상담 신청합니다.`;
+            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 수원 오목천역 더리브 전화 상담 신청합니다.`;
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
             
@@ -620,17 +633,18 @@
             }
         }
 
+        // 5. 탭 변경 제어
         function openTab(e, t) {
             document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
             document.getElementById(t).classList.add("active");
             e.currentTarget.classList.add("active");
             
-            // 기존 tab3 였던 세대 안내 필터 트리거 로직을 변경된 tab2 에 맞게 보정
             if(t === 'tab2') changeViewMode(null, 'photo-view');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
+        // 6. 단지 안내 / 평면도 안내 뷰 전환
         function changeViewMode(e, m) {
             document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
             document.getElementById(m).classList.add('active');
@@ -645,6 +659,7 @@
             else document.querySelector('.filter-btn').click();
         }
 
+        // 7. 평면도 평형 필터링
         function filterSize(e, s) {
             document.querySelectorAll('#plan-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
             document.getElementById(s).classList.add('active');
@@ -653,6 +668,7 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
+        // 8. 서브 탭 제어
         function openSubTab(e, s, p) {
             const parent = document.getElementById(p);
             parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
@@ -660,19 +676,6 @@
             e.currentTarget.classList.add("active");
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
-
-        window.addEventListener('DOMContentLoaded', function() {
-            const name = TEAM_LEADER_NAME;
-            const phone = TEAM_LEADER_PHONE;
-            const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-        
-            document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
-            document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
-            document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
-            document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
-
-            document.title = "수원 오목천역 더리브 - " + name + " 팀장";
-        });
     </script>
 </body>
 </html>
