@@ -644,20 +644,20 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 6. 단지 안내 / 평면도 안내 뷰 전환
-        function changeViewMode(e, m) {
-            document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
-            document.getElementById(m).classList.add('active');
-            if(e) {
-                e.currentTarget.classList.add('active');
-                window.scrollTo({top: 0, behavior: 'smooth'});
-            } else {
-                document.querySelector('.mode-btn').classList.add('active');
-            }
+        // // 6. 단지 안내 / 평면도 안내 뷰 전환
+        // function changeViewMode(e, m) {
+        //     document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
+        //     document.getElementById(m).classList.add('active');
+        //     if(e) {
+        //         e.currentTarget.classList.add('active');
+        //         window.scrollTo({top: 0, behavior: 'smooth'});
+        //     } else {
+        //         document.querySelector('.mode-btn').classList.add('active');
+        //     }
             
-            if(m === 'photo-view') document.querySelector('#photo-view .sub-tab-btn').click();
-            else document.querySelector('.filter-btn').click();
-        }
+        //     if(m === 'photo-view') document.querySelector('#photo-view .sub-tab-btn').click();
+        //     else document.querySelector('.filter-btn').click();
+        // }
 
         // 7. 평면도 평형 필터링
         function filterSize(e, s) {
@@ -668,14 +668,14 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 8. 서브 탭 제어
-        function openSubTab(e, s, p) {
-            const parent = document.getElementById(p);
-            parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
-            document.getElementById(s).classList.add("active");
-            e.currentTarget.classList.add("active");
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
+        // // 8. 서브 탭 제어
+        // function openSubTab(e, s, p) {
+        //     const parent = document.getElementById(p);
+        //     parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
+        //     document.getElementById(s).classList.add("active");
+        //     e.currentTarget.classList.add("active");
+        //     window.scrollTo({top: 0, behavior: 'smooth'});
+        // }
     </script>
 </body>
 </html>
